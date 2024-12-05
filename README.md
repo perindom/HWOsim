@@ -21,16 +21,21 @@ The success of future space missions relies heavily on the ability to analyze da
 - **Promotes reproducibility**: Provides the scientific community with an open-source framework for testing operational AI systems.
 - **Supports mission success**: Contributes to the readiness and reliability of AI tools for NASA's upcoming HWO mission.
 
-## Dataset
-The [Mikulski Archive for Space Telescopes (MAST)](https://archive.stsci.edu/) is a NASA-funded project to support and provide to the astronomical community a variety of astronomical data archives, with the primary focus on scientifically related data sets in the optical, ultraviolet, and near-infrared parts of the spectrum.  
-[HWOsim](https://github.com/perindom/HWOsim) utilizes data obtained from the MAST Portal, focusing on diverse datasets from the [JWST Mission](https://archive.stsci.edu/missions-and-data/jwst).
+### Dataset and Provenance  
 
-### Data Provenance  
-All data for this project originates from the [Mikulski Archive for Space Telescopes (MAST)](https://archive.stsci.edu/), a trusted NASA-funded repository. The data focuses on the James Webb Space Telescope (JWST) archives, encompassing a variety of scientifically rich datasets in the optical, ultraviolet, and near-infrared spectrum. This archive ensures that the dataset is authentic and scientifically validated.
+The [**Mikulski Archive for Space Telescopes (MAST)**](https://archive.stsci.edu/), a NASA-funded repository, serves as the cornerstone for this project’s data. MAST provides access to a comprehensive collection of scientifically validated astronomical datasets, with an emphasis on the optical, ultraviolet, and near-infrared parts of the spectrum. Specifically, this project leverages archives from the [**James Webb Space Telescope (JWST)**](https://archive.stsci.edu/missions-and-data/jwst) mission, one of the most advanced astronomical observatories, to simulate future Habitable Worlds Observatory (HWO) data streams.  
 
-Any modifications to the data in this pipeline are simulated transformations implemented to replicate real-world conditions of streaming data from the future Habitable Worlds Observatory (HWO). These transformations include controlled perturbations, such as noise introduction, missing values, and data drift, executed using Python’s pandas library. These changes are cosmetic and do not alter the fundamental integrity of the data.
+The datasets accessed via MAST are renowned for their authenticity, reliability, and scientific rigor. By building on this foundation, the project ensures that the simulated environment is grounded in real-world, high-fidelity data, enabling meaningful research and experimentation.  
 
-The transformations occur dynamically as part of the streaming simulation pipeline, ensuring the system can process and analyze data in real-time as it would during live HWO operations.
+### Data Transformations  
+To mimic the unpredictability of real-world streaming data from the future HWO mission, controlled **data perturbations** are applied to the JWST datasets. These perturbations simulate environmental and operational challenges, such as:  
+- **Noise Introduction**: Emulating instrumental or transmission noise.  
+- **Missing Values**: Representing gaps due to observational limitations or system outages.  
+- **Data Drift**: Simulating gradual changes in data distribution over time.  
+
+These transformations are implemented dynamically within the pipeline using Python’s **pandas** library and are designed to reflect real-time streaming conditions. The modifications are strictly cosmetic; the core scientific integrity of the data remains intact.  
+
+By introducing these transformations, the pipeline replicates operational challenges that AI models are likely to encounter during HWO’s mission. This approach ensures robust testing and validation of algorithms and workflows, equipping researchers with tools to analyze and adapt to live-streamed astronomical data effectively.  
 
 ## Pipeline Architecture
 HWOsim's pipeline is comprised of these steps:
@@ -106,7 +111,32 @@ python apply_perturbations.py
 python stream_ingest.py
 ```
 5. **Visualize Results**: Analyze processed data using visualization tools like Tableau or custom dashboards.
-6. ** **
 
+### Thorough Investigation  
 
+This project represents an innovative step toward simulating live-streaming data environments for future missions like NASA’s Habitable Worlds Observatory (HWO). By leveraging archival datasets from the James Webb Space Telescope (JWST) and introducing realistic perturbations, this pipeline effectively creates a high-fidelity testbed for developing and validating AI-driven analytical systems.  
+
+#### Viability and Scalability  
+The results of this pilot project demonstrate the technical feasibility of simulating real-time data streams with controlled perturbations. The modular design of the pipeline ensures flexibility, allowing it to scale with additional datasets, more complex perturbation techniques, and enhanced streaming frequencies.  
+- **Scalability Potential**: With additional computational and cloud resources, this pipeline can be expanded to process larger volumes of data or accommodate real-time analysis for multiple observatories simultaneously.  
+- **Adaptability**: The pipeline’s architecture is modular, making it easy to integrate new data sources, refine perturbation methods, or incorporate additional analytics capabilities.  
+
+#### Innovation Assessment  
+This project is highly innovative in its application of controlled perturbations to simulate live-streamed astronomical data. It bridges a critical gap in preparing AI models for operational deployment by providing a realistic and reproducible data environment. This approach ensures that AI systems are robust, adaptable, and ready to handle the complexities of live space mission data.  
+
+#### Technical and Platform Challenges  
+While the project achieved its objectives, several challenges were identified:  
+- **Cloud Resource Costs**: Scaling up S3 storage and streaming simulations with Apache Kafka incurs significant cloud costs. Cost optimization strategies are essential for sustainability.  
+- **Data Latency**: Real-time streaming simulations require low-latency infrastructure, which may demand higher-end hardware or more optimized configurations.  
+- **Perturbation Complexity**: Introducing more advanced or mission-specific perturbations will require further research and computational power.  
+
+#### Recommendations for Next Steps  
+To take this project to the next phase, we recommend the following:  
+1. **Integrate More Datasets**: Expand the pipeline to include additional archival datasets, such as those from the Hubble Space Telescope or TESS, to enhance versatility.  
+2. **Optimize Perturbation Algorithms**: Refine the perturbation methods to reflect even more realistic mission scenarios, including dynamic changes in data quality or observational conditions.  
+3. **Enhance Real-Time Capabilities**: Invest in infrastructure improvements to minimize latency and enable real-time processing at scale.  
+4. **Develop Advanced Analytics**: Incorporate machine learning models into the pipeline to autonomously detect anomalies, classify events, or predict trends in the streaming data.  
+5. **Collaborate with Mission Teams**: Engage with NASA teams and the broader scientific community to align the pipeline with operational needs and ensure its readiness for mission deployment.  
+
+This project lays a strong foundation for the future of data engineering in space missions, demonstrating both technical feasibility and potential for significant scientific impact. By continuing to develop and refine this pipeline, it can serve as a critical tool for enabling AI-driven discovery in the next generation of astronomical missions.  
 
