@@ -25,6 +25,13 @@ The success of future space missions relies heavily on the ability to analyze da
 The [Mikulski Archive for Space Telescopes (MAST)](https://archive.stsci.edu/) is a NASA-funded project to support and provide to the astronomical community a variety of astronomical data archives, with the primary focus on scientifically related data sets in the optical, ultraviolet, and near-infrared parts of the spectrum.  
 [HWOsim](https://github.com/perindom/HWOsim) utilizes data obtained from the MAST Portal, focusing on diverse datasets from the [JWST Mission](https://archive.stsci.edu/missions-and-data/jwst).
 
+### Data Provenance  
+All data for this project originates from the [Mikulski Archive for Space Telescopes (MAST)](https://archive.stsci.edu/), a trusted NASA-funded repository. The data focuses on the James Webb Space Telescope (JWST) archives, encompassing a variety of scientifically rich datasets in the optical, ultraviolet, and near-infrared spectrum. This archive ensures that the dataset is authentic and scientifically validated.
+
+Any modifications to the data in this pipeline are simulated transformations implemented to replicate real-world conditions of streaming data from the future Habitable Worlds Observatory (HWO). These transformations include controlled perturbations, such as noise introduction, missing values, and data drift, executed using Python’s pandas library. These changes are cosmetic and do not alter the fundamental integrity of the data.
+
+The transformations occur dynamically as part of the streaming simulation pipeline, ensuring the system can process and analyze data in real-time as it would during live HWO operations.
+
 ## Pipeline Architecture
 HWOsim's pipeline is comprised of these steps:
 1. **Batch ingest archival data to an S3 data lake**: Use Astroquery and AWS S3 to collect JWST data and store it in a scalable data lake.
@@ -32,7 +39,7 @@ HWOsim's pipeline is comprised of these steps:
 3. **Simulate streaming live data using Kafka**: Read data from the S3-stored batches, apply perturbations in real-time, and stream it to downstream consumers (e.g., AI models or visualization tools).
 4. **Configurable streaming**: Enable users to adjust perturbation levels and streaming frequency, allowing testing of model resilience to real-world data variations.
 
-
+### Pipeline Infographic
 //INSERT INFOGRAPHIC here//
 
 ### Tools & Technologies
@@ -45,3 +52,45 @@ HWOsim's pipeline is comprised of these steps:
 - Data Lake & Data Warehouse - [**Amazon Simple Storage Service (Amazon S3)**](https://aws.amazon.com/s3/)
 - Data Visualization - //INSERT WHATEVER WE USE HERE//
 - Language - [**Python**](https://www.python.org)
+
+## Data Transformation  
+We introduce controlled perturbations to the archived data from the future Habitable Worlds Observatory (HWO) to simulate live-streaming data from the James Webb Space Telescope (JWST). These perturbations mimic the unpredictable nature of real-world streaming data and are a critical component of our pipeline.
+
+The transformations include:  
+- **Noise Addition**: Introducing random noise to emulate signal interference or transmission errors.  
+- **Missing Values**: Simulating incomplete data streams caused by telemetry loss or hardware glitches.  
+- **Data Drift**: Applying gradual changes to the data to represent evolving conditions, such as sensor recalibrations or environmental effects.  
+
+These perturbations are dynamically applied to the data using Python and integrated into the pipeline through the **Perturbation** module. By introducing these transformations, we ensure the pipeline accurately reflects the challenges of real-time data ingestion and processing, enabling robust AI/ML model development and testing.
+
+## Replicating this Project  
+
+Follow the instructions below to replicate this project and run the data pipeline to simulate future HWO datastreams. Ensure that all prerequisites are installed and configured correctly before proceeding.
+
+#### Environment  
+1. **Operating System**: This pipeline is compatible with Linux, macOS, and Windows environments.  
+2. **Programming Languages**: Python 3.8 or higher is required.  
+3. **Python Libraries**: Install the dependencies listed in `requirements.txt` using the command:  
+   ```bash
+   pip install -r requirements.txt
+4. **Cloud Resources**: AWS S3: Used for the data lake and data warehouse layers. Ensure you have valid AWS credentials configured.
+Apache Kafka: Deployed locally or in the cloud for the streaming simulation.
+5. **Optional Tools**: Docker (for containerizing and orchestrating the pipeline).
+
+#### Steps
+Follow these steps to replicate the pipeline:
+1. **Clone the Repository**
+Clone this repository to your local machine:
+
+git clone https://github.com/perindom/HWOsim.git
+cd HWOsim
+
+2. **Set Up the Environment**
+Create a virtual environment and activate it:
+```bash
+python3 -m venv env  
+source env/bin/activate  # For Linux/macOS  
+env\Scripts\activate  # For Windows  
+
+
+
