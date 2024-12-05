@@ -81,17 +81,32 @@ Apache Kafka: Deployed locally or in the cloud for the streaming simulation.
 #### Steps
 Follow these steps to replicate the pipeline:
 1. **Clone the Repository**: Clone this repository to your local machine:
-```bash
+```
 git clone https://github.com/perindom/HWOsim.git
 cd HWOsim
 ```
 2. **Set Up the Environment**: Create a virtual environment and activate it:
-```bash
+```
 python3 -m venv env  
 source env/bin/activate  # For Linux/macOS  
 env\Scripts\activate  # For Windows
 ```
 3. **Prepare Cloud Resources**:Create an AWS S3 bucket and update the bucket name in scripts. Set up Apache Kafka locally or in the cloud.
+4. **Run the Pipeline**:
+- Batch Ingestion:
+```
+python batch_ingest.py
+```
+- Perturbations
+```
+python apply_perturbations.py
+```
+- Streaming Simulation:
+```
+python stream_ingest.py
+```
+5. **Visualize Results**: Analyze processed data using visualization tools like Tableau or custom dashboards.
+6. ** **
 
 
 
