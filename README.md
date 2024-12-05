@@ -1,8 +1,7 @@
 # HWOsim
+### Simulating NASA HWO Observatory Data Streams using existing batched data.
 
-Simulating NASA HWO Observatory Data Streams using existing batched data.
----
-## Team Members
+#### Team Members:
 - Dominick Perini
 - Jeri Brentlinger
 
