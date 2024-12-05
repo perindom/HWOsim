@@ -21,16 +21,21 @@ The success of future space missions relies heavily on the ability to analyze da
 - **Promotes reproducibility**: Provides the scientific community with an open-source framework for testing operational AI systems.
 - **Supports mission success**: Contributes to the readiness and reliability of AI tools for NASA's upcoming HWO mission.
 
-## Dataset
-The [Mikulski Archive for Space Telescopes (MAST)](https://archive.stsci.edu/) is a NASA-funded project to support and provide to the astronomical community a variety of astronomical data archives, with the primary focus on scientifically related data sets in the optical, ultraviolet, and near-infrared parts of the spectrum.  
-[HWOsim](https://github.com/perindom/HWOsim) utilizes data obtained from the MAST Portal, focusing on diverse datasets from the [JWST Mission](https://archive.stsci.edu/missions-and-data/jwst).
+### Dataset and Provenance  
 
-### Data Provenance  
-All data for this project originates from the [Mikulski Archive for Space Telescopes (MAST)](https://archive.stsci.edu/), a trusted NASA-funded repository. The data focuses on the James Webb Space Telescope (JWST) archives, encompassing a variety of scientifically rich datasets in the optical, ultraviolet, and near-infrared spectrum. This archive ensures that the dataset is authentic and scientifically validated.
+The [**Mikulski Archive for Space Telescopes (MAST)**](https://archive.stsci.edu/), a NASA-funded repository, serves as the cornerstone for this project’s data. MAST provides access to a comprehensive collection of scientifically validated astronomical datasets, with an emphasis on the optical, ultraviolet, and near-infrared parts of the spectrum. Specifically, this project leverages archives from the [**James Webb Space Telescope (JWST)**](https://archive.stsci.edu/missions-and-data/jwst) mission, one of the most advanced astronomical observatories, to simulate future Habitable Worlds Observatory (HWO) data streams.  
 
-Any modifications to the data in this pipeline are simulated transformations implemented to replicate real-world conditions of streaming data from the future Habitable Worlds Observatory (HWO). These transformations include controlled perturbations, such as noise introduction, missing values, and data drift, executed using Python’s pandas library. These changes are cosmetic and do not alter the fundamental integrity of the data.
+The datasets accessed via MAST are renowned for their authenticity, reliability, and scientific rigor. By building on this foundation, the project ensures that the simulated environment is grounded in real-world, high-fidelity data, enabling meaningful research and experimentation.  
 
-The transformations occur dynamically as part of the streaming simulation pipeline, ensuring the system can process and analyze data in real-time as it would during live HWO operations.
+### Data Transformations  
+To mimic the unpredictability of real-world streaming data from the future HWO mission, controlled **data perturbations** are applied to the JWST datasets. These perturbations simulate environmental and operational challenges, such as:  
+- **Noise Introduction**: Emulating instrumental or transmission noise.  
+- **Missing Values**: Representing gaps due to observational limitations or system outages.  
+- **Data Drift**: Simulating gradual changes in data distribution over time.  
+
+These transformations are implemented dynamically within the pipeline using Python’s **pandas** library and are designed to reflect real-time streaming conditions. The modifications are strictly cosmetic; the core scientific integrity of the data remains intact.  
+
+By introducing these transformations, the pipeline replicates operational challenges that AI models are likely to encounter during HWO’s mission. This approach ensures robust testing and validation of algorithms and workflows, equipping researchers with tools to analyze and adapt to live-streamed astronomical data effectively.  
 
 ## Pipeline Architecture
 HWOsim's pipeline is comprised of these steps:
@@ -106,7 +111,6 @@ python apply_perturbations.py
 python stream_ingest.py
 ```
 5. **Visualize Results**: Analyze processed data using visualization tools like Tableau or custom dashboards.
-6. ** **
 
 
 
