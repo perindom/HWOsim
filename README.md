@@ -81,7 +81,7 @@ Apache Kafka: Deployed locally or in the cloud for the streaming simulation.
 Follow these steps to replicate the pipeline:
 1. **Clone the Repository**
 Clone this repository to your local machine:
-
+```bash
 git clone https://github.com/perindom/HWOsim.git
 cd HWOsim
 
