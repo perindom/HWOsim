@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
-import os
+from batch_ingest import load_data
 
 # DAG configuration
 default_args = {
@@ -15,25 +15,18 @@ default_args = {
 
 # Define the DAG
 with DAG(
-    dag_id="jwst_data_ingestion",
+    dag_id="astroquery_data_upload",
     default_args=default_args,
-    description="Ingest JWST public FITS files to S3",
+    description="Ingest JWST public JPEG files to S3",
     schedule_interval=None,  # Manual trigger
     start_date=datetime(2024, 12, 1),
     catchup=False,
 ) as dag:
-
-    def run_ingestion(limit):
-        import sys
-        sys.path.append("/root/airflow/dags")  # Ensure batch_ingest is found
-        from batch_ingest import fetch_and_upload_jwst_data
-        fetch_and_upload_jwst_data(limit)
-
     # Define the task
-    ingest_jwst_data_task = PythonOperator(
-        task_id="ingest_jwst_data",
-        python_callable=run_ingestion,
+    astroquery_data_upload = PythonOperator(
+        task_id="astroquery_data_upload",
+        python_callable=load_data,
         op_kwargs={"limit": 100},  # Adjust limit as needed
     )
 
-    ingest_jwst_data_task
+astroquery_data_upload
