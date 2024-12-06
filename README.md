@@ -121,7 +121,7 @@ python apply_perturbations.py
 ```
 python mysqlcode.py
 ```
-5. **Visualize Results**: Analyze processed data using visualization tools like Tableau or custom dashboards.
+5. **Visualize Results**: Analyze processed data using visualization tools like Tableau or custom dashboards. In this project, data is streamed to a MySQL database that Tableau can be connected to, but do to technical difficulties with Tableau software example visualizations of data streams were created using the same data but with Matplotlib.
 
 <img width="858" alt="Histogram of File Sizes" src="https://github.com/user-attachments/assets/503951d2-d3ca-4952-9a40-9920cc77d23d">
 <img width="1123" alt="Running File Size" src="https://github.com/user-attachments/assets/be5103d5-1f76-478f-9614-2120da9dc612">
