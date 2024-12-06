@@ -56,11 +56,11 @@ HWOsim's pipeline is comprised of these steps:
 
 - Cloud - [**Amazon Web Services (AWS)**](https://aws.amazon.com/), [**Amazon Elastic Compute Cloud (Amazon EC2)**](https://aws.amazon.com/pm/ec2/)
 - Containerization - [**Docker**](https://www.docker.com)
-- Stream Processing - [**Kafka**](https://kafka.apache.org)
+- Analytics Database Storage - [**MySQL**](https://www.mysql.com/)
 - Orchestration - [**Apache Airflow**](https://airflow.apache.org)
-- Transformation - ?
+- Transformation - [**Python Pillow Library**](https://pypi.org/project/pillow/)
 - Data Lake & Data Warehouse - [**Amazon Simple Storage Service (Amazon S3)**](https://aws.amazon.com/s3/)
-- Data Visualization - //INSERT WHATEVER WE USE HERE//
+- Data Visualization - [**Matplotlib**](https://pypi.org/project/matplotlib/)
 - Language - [**Python**](https://www.python.org)
 
 ## Data Transformation  
@@ -85,7 +85,6 @@ Follow the instructions below to replicate this project and run the data pipelin
    pip install -r requirements.txt
    ```
 4. **Cloud Resources**: AWS S3: Used for the data lake and data warehouse layers. Ensure you have valid AWS credentials configured.
-Apache Kafka: Deployed locally or in the cloud for the streaming simulation.
 5. **Optional Tools**: Docker (for containerizing and orchestrating the pipeline).
 
 #### Steps
@@ -103,19 +102,21 @@ env\Scripts\activate  # For Windows
 ```
 3. **Prepare Cloud Resources**:Create an AWS S3 bucket and update the bucket name in scripts. Set up Apache Kafka locally or in the cloud.
 4. **Run the Pipeline**:
-- Batch Ingestion:
+- Batch Ingestion: (dag.py)
 ```
 python batch_ingest.py
 ```
-- Perturbations
+- Perturbations: (dag_perturbation.py)
 ```
 python apply_perturbations.py
 ```
-- Streaming Simulation:
+- Send to MySQL: (dag_send.py)
 ```
-python stream_ingest.py
+python mysqlcode.py
 ```
 5. **Visualize Results**: Analyze processed data using visualization tools like Tableau or custom dashboards.
+
+
 
 ### Thorough Investigation  
 
