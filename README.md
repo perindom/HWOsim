@@ -57,7 +57,7 @@ HWOsim's pipeline is comprised of these steps:
 
 - Cloud - [**Amazon Web Services (AWS)**](https://aws.amazon.com/), [**Amazon Elastic Compute Cloud (Amazon EC2)**](https://aws.amazon.com/pm/ec2/)
 - Containerization - [**Docker**](https://www.docker.com)
-- Stream Processing - [**Kafka**](https://kafka.apache.org)
+- Stream Processing - [**MySql**](https://www.mysql.com/)
 - Orchestration - [**Apache Airflow**](https://airflow.apache.org)
 - Transformation - ?
 - Data Lake & Data Warehouse - [**Amazon Simple Storage Service (Amazon S3)**](https://aws.amazon.com/s3/)
