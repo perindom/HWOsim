@@ -49,7 +49,8 @@ HWOsim's pipeline is comprised of these steps:
 
 ### Pipeline Infographic
 
-![JWST_Project_Pipeline_infographic](https://github.com/user-attachments/assets/375dce61-42d6-4b16-8806-a54db77e79d7)
+![image](https://github.com/user-attachments/assets/5167e8a5-66a6-4417-9125-b14d642ec36b)
+
 
 
 ### Tools & Technologies
