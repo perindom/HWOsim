@@ -1,6 +1,9 @@
 # HWOsim
+### Simulating NASA HWO Observatory Data Streams using existing batched data.
 
-Simulating NASA HWO Observatory Data Streams using existing batched data.
+#### Team Members:
+- Dominick Perini
+- Jeri Brentlinger
 
 ## Project Description
 
@@ -45,7 +48,9 @@ HWOsim's pipeline is comprised of these steps:
 4. **Configurable streaming**: Enable users to adjust perturbation levels and streaming frequency, allowing testing of model resilience to real-world data variations.
 
 ### Pipeline Infographic
-//INSERT INFOGRAPHIC here//
+
+![JWST_Project_Pipeline_infographic](https://github.com/user-attachments/assets/375dce61-42d6-4b16-8806-a54db77e79d7)
+
 
 ### Tools & Technologies
 
