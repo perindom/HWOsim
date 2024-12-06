@@ -61,7 +61,7 @@ HWOsim's pipeline is comprised of these steps:
 - Orchestration - [**Apache Airflow**](https://airflow.apache.org)
 - Transformation - [**Python**](https://www.python.org)
 - Data Lake & Data Warehouse - [**Amazon Simple Storage Service (Amazon S3)**](https://aws.amazon.com/s3/)
-- Data Visualization - //INSERT WHATEVER WE USE HERE//
+- Data Visualization - [**Tableau**](https://www.tableau.com/)
 - Language - [**Python**](https://www.python.org)
 
 ## Data Transformation  
