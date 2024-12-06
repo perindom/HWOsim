@@ -26,6 +26,14 @@ The success of future space missions relies heavily on the ability to analyze da
 
 ### Dataset and Provenance  
 
+The data products used for this project are JPEG images of James Webb Space Telescope collections. They vary in size and resolution, below are three examples that illustrate the variance in the images.
+
+![jw01079-o004_t002_niriss_clear-f158m_i2d](https://github.com/user-attachments/assets/9e442168-a283-4bd2-bd7c-ab5d68f4cc7d)
+![jw01145-o004_t001_fgs_clear_i2d](https://github.com/user-attachments/assets/93fbfc1d-fff7-440f-9445-473bf8914e70)
+![jw01080-o006_t006_niriss_clearp-f277w-sub128_i2d](https://github.com/user-attachments/assets/b40d704f-5b3d-4707-bef3-826b59f5561e)
+
+
+
 The [**Mikulski Archive for Space Telescopes (MAST)**](https://archive.stsci.edu/), a NASA-funded repository, serves as the cornerstone for this project’s data. MAST provides access to a comprehensive collection of scientifically validated astronomical datasets, with an emphasis on the optical, ultraviolet, and near-infrared parts of the spectrum. Specifically, this project leverages archives from the [**James Webb Space Telescope (JWST)**](https://archive.stsci.edu/missions-and-data/jwst) mission, one of the most advanced astronomical observatories, to simulate future Habitable Worlds Observatory (HWO) data streams.  
 
 The datasets accessed via MAST are renowned for their authenticity, reliability, and scientific rigor. By building on this foundation, the project ensures that the simulated environment is grounded in real-world, high-fidelity data, enabling meaningful research and experimentation.  
@@ -50,8 +58,6 @@ HWOsim's pipeline is comprised of these steps:
 ### Pipeline Infographic
 
 ![image](https://github.com/user-attachments/assets/5167e8a5-66a6-4417-9125-b14d642ec36b)
-
-
 
 ### Tools & Technologies
 
@@ -117,6 +123,9 @@ python mysqlcode.py
 ```
 5. **Visualize Results**: Analyze processed data using visualization tools like Tableau or custom dashboards.
 
+<img width="858" alt="Histogram of File Sizes" src="https://github.com/user-attachments/assets/503951d2-d3ca-4952-9a40-9920cc77d23d">
+<img width="1123" alt="Running File Size" src="https://github.com/user-attachments/assets/be5103d5-1f76-478f-9614-2120da9dc612">
+<img width="1126" alt="Running File Size Deviation" src="https://github.com/user-attachments/assets/a2fa7fb7-60c1-4694-bb8f-6584cade83aa">
 
 
 ### Thorough Investigation  
