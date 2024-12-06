@@ -44,12 +44,13 @@ By introducing these transformations, the pipeline replicates operational challe
 HWOsim's pipeline is comprised of these steps:
 1. **Batch ingest archival data to an S3 data lake**: Use Astroquery and AWS S3 to collect JWST data and store it in a scalable data lake.
 2. **Employ perturbation techniques**: Introduce controlled imperfections (e.g., noise, missing values, and data drift) to simulate live-streamed, uncleaned data conditions.
-3. **Simulate streaming live data using Kafka**: Read data from the S3-stored batches, apply perturbations in real-time, and stream it to downstream consumers (e.g., AI models or visualization tools).
+3. **Simulate streaming live data using MySql**: Read data from the S3-stored batches, apply perturbations in real-time, and stream it to downstream consumers (e.g., AI models or visualization tools).
 4. **Configurable streaming**: Enable users to adjust perturbation levels and streaming frequency, allowing testing of model resilience to real-world data variations.
 
 ### Pipeline Infographic
 
-![JWST_Project_Pipeline_infographic](https://github.com/user-attachments/assets/375dce61-42d6-4b16-8806-a54db77e79d7)
+![image](https://github.com/user-attachments/assets/5167e8a5-66a6-4417-9125-b14d642ec36b)
+
 
 
 ### Tools & Technologies
