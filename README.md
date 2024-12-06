@@ -59,7 +59,7 @@ HWOsim's pipeline is comprised of these steps:
 - Containerization - [**Docker**](https://www.docker.com)
 - Stream Processing - [**MySql**](https://www.mysql.com/)
 - Orchestration - [**Apache Airflow**](https://airflow.apache.org)
-- Transformation - ?
+- Transformation - [**Python**](https://www.python.org)
 - Data Lake & Data Warehouse - [**Amazon Simple Storage Service (Amazon S3)**](https://aws.amazon.com/s3/)
 - Data Visualization - //INSERT WHATEVER WE USE HERE//
 - Language - [**Python**](https://www.python.org)
